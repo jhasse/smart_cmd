@@ -46,7 +46,7 @@ std::string getExplorerPath() {
 				HWND edit = getChild(wnd, "ComboBoxEx32");
 				Debug("Using ComboBoxEx32 ...\n");
 				SendMessage(edit, WM_GETTEXT, maxCount, (LPARAM)tmp);
-				if (tmp[0] == '\0') {
+				if (tmp[0] == '\0' || tmp[1] != ':') {
 					throw std::runtime_error("Falling back to other method.");
 				}
 				return tmp;
@@ -73,7 +73,7 @@ std::string getExplorerPath() {
 
 int main() {
 	std::string path = getExplorerPath();
-	if (path == "") {
+	if (path == "" || path.size() < 2 || path[1] != ':') {
 		Debug("No valid path found.\n");
 		system("cmd.exe");
 	} else {
