@@ -8,6 +8,7 @@ Download
 --------
 
 * [smart_cmd.exe](https://github.com/downloads/jhasse/smart_cmd/smart_cmd.exe) -- Version 1.0
+* [smart_powershell.exe](https://github.com/downloads/jhasse/smart_cmd/smart_powershell.exe) Runs the Windows PowerShell instead.
 
 Bugs
 ----
