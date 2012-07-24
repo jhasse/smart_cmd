@@ -9,7 +9,7 @@ Download
 
 * [smart_cmd.exe](https://github.com/downloads/jhasse/smart_cmd/smart_cmd.exe) Normal version, uses cmd.exe.
 
-* [smart_powershell.exe](https://github.com/downloads/jhasse/smart_cmd/smart_powershell.exe) Runs the Windows PowerShell instead.
+* [smart_powershell.exe](https://github.com/downloads/jhasse/smart_cmd/smart_powershell.exe) Runs the Windows PowerShell (64 bit) instead.
 
 Bugs
 ----
