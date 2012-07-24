@@ -5,10 +5,11 @@
 
 int main() {
 	Wow64EnableWow64FsRedirection(FALSE);
+	const auto powershellCmd = "powershell -NoExit -NoLogo";
 	std::string path = getExplorerPath();
 	if (path == "" || path.size() < 2 || path[1] != ':') {
 		Debug("No valid path found.\n");
-		system("powershell -NoExit");
+		system(powershellCmd);
 	} else {
 		Debug("Using path: '"); Debug(path); Debug("'\n");
 		size_t pos = 0;
@@ -17,7 +18,7 @@ int main() {
 			pos += 2;
 		}
 		std::stringstream sstream;
-		sstream << "powershell -NoExit -Command Set-Location -LiteralPath \\\"" << path << "\\\"";
+		sstream << powershellCmd << " -Command Set-Location -LiteralPath \\\"" << path << "\\\"";
 		Debug(sstream.str() + "\n");
 		system(sstream.str().c_str());
 	}
