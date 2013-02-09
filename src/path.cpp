@@ -27,21 +27,35 @@ std::string getExplorerPath() {
 		Debug("No window found.\n");
 	} else {
 		try {
-			wnd = getChild(getChild(getChild(getChild(getChild(getChild(wnd,
-						"WorkerW"),
-						"ReBarWindow32"),
-						"Address Band Root"),
-						"msctls_progress32"),
-						"Breadcrumb Parent"),
-						"ToolbarWindow32");
+			bool ignore = true;
+			try {
+				wnd = getChild(getChild(getChild(getChild(getChild(getChild(wnd,
+							"WorkerW"),
+							"ReBarWindow32"),
+							"Address Band Root"),
+							"msctls_progress32"),
+							"Breadcrumb Parent"),
+							"ToolbarWindow32");
+			} catch (std::runtime_error& e) {
+				Debug(e.what()); Debug("\nSecond try ...\n");
+				wnd = getChild(getChild(getChild(getChild(getChild(wnd,
+							"WorkerW"),
+							"ReBarWindow32"),
+							"ComboBoxEx32"),
+							"ComboBox"),
+							"Edit");
+				ignore = false;
+			}
 			SendMessage(wnd, WM_GETTEXT, maxCount, (LPARAM)tmp);
-			// Window Text starts with "URL: " (or "Adresse: " in Germany).
-			// So we need to remove it.
 			Debug(tmp); Debug("\n");
 			std::stringstream sstream(tmp);
 			std::string url;
-			sstream >> url;
-			sstream.ignore(1); // Ignore space
+			if (ignore) {
+				// Window Text starts with "URL: " (or "Adresse: " in Germany).
+				// So we need to remove it.
+				sstream >> url;
+				sstream.ignore(1); // Ignore space
+			}
 			std::getline(sstream, url);
 			return url;
 		} catch(std::runtime_error& e) {
