@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\smart_cmd" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Debug\" />
+				<Option output="bin/Debug/smart_cmd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -17,8 +17,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\smart_cmd" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\Release\" />
+				<Option output="bin/Release/smart_cmd" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
@@ -39,16 +39,25 @@
 			<Add library="user32" />
 			<Add library="kernel32" />
 		</Linker>
-		<Unit filename="src\cmd.cpp" />
-		<Unit filename="src\cmd.rc">
+		<Unit filename="src/cmd.cpp" />
+		<Unit filename="src/cmd.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="src\path.cpp" />
-		<Unit filename="src\path.h" />
+		<Unit filename="src/path.cpp" />
+		<Unit filename="src/path.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
