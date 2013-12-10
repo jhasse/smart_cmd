@@ -21,3 +21,19 @@ If smart_cmd.exe doesn't work, please download the Debug build:
 When you run it you should see additional output. Please
 [fill a bug report](https://github.com/jhasse/smart_cmd/issues/new) and I will try to fix it as soon
 as possible.
+
+smart_cmd for MSYS
+------------------
+
+If you're using MSYS, you can use
+[smart_msys.exe](https://github.com/jhasse/smart_cmd/releases/download/v1.0/smart_msys.exe)
+which prints the current path of the Windows Explorer.
+
+Then create a .profile file in your MSYS home folder along with smart_msys.exe
+and add:
+
+```
+cd "$(./smart_msys.exe)"
+```
+
+To pin the MSYS to the taskbar use [mintty](http://code.google.com/p/mintty/).
