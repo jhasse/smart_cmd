@@ -36,4 +36,4 @@ and add:
 cd "$(./smart_msys.exe)"
 ```
 
-To pin the MSYS to the taskbar use [mintty](http://code.google.com/p/mintty/).
+To pin MSYS to the taskbar use [ConEmu](https://code.google.com/p/conemu-maximus5/).
