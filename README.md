@@ -7,7 +7,7 @@ where you currently are in the Windows Explorer.
 Download
 --------
 
-* [smart_cmd.exe](https://github.com/jhasse/smart_cmd/releases/download/v1.0/smart_cmd.exe) Normal version, uses cmd.exe.
+* [smart_cmd.exe](https://github.com/jhasse/smart_cmd/releases/download/v1.1/smart_cmd.exe) Normal version, uses cmd.exe.
 
 * [smart_powershell.exe](https://github.com/downloads/jhasse/smart_cmd/smart_powershell.exe) Runs the Windows PowerShell (64 bit) instead.
 
